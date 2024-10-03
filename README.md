@@ -1,5 +1,5 @@
-# Setting Up a Fresh Neovim Installation
-## Step-by-Step Guide 
+#kbzvim
+## Setting Up a Fresh Neovim Installation
 Follow these steps to install Neovim and set up your configuration.
 
 - Update Your System
