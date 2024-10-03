@@ -6,19 +6,19 @@ Follow these steps to install Neovim and set up your configuration.
 ```bash
 sudo pacman -Syu
 ```
-- 2. **Install Neovim**  
+- Install Neovim  
 ```bash
 sudo pacman -S nvim
 ```
-- 3. **Clone the Configuration Repository**  
+- Clone the Configuration Repository
 ```bash
 git clone https://github.com/thekbbohara/nvim.git ~/.config/nvim
 ```
-- 4. **Remove the Git History**  
+- Remove the Git History
 ```bash
 rm -rf ~/.config/nvim/.git
 ```
-- 5. **Launch Neovim**  
+- Launch Neovim
 ```bash
 nvim
 ```
