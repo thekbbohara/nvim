@@ -4,11 +4,11 @@ Follow these steps to install Neovim and set up your configuration.
 
 - Update Your System
 ```bash
-sudo pacman -Syu
+sudo pacman -Syu #distro specefic
 ```
 - Install Neovim  
 ```bash
-sudo pacman -S nvim
+sudo pacman -S nvim #distro specefic
 ```
 - Clone the Configuration Repository
 ```bash
