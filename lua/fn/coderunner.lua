@@ -8,7 +8,7 @@ local executables = {
   php = "php", --php
   go = "go", --go
   rs = "cargo run", --rust
-  ts = "ts-node", --typescript
+  ts = "bun", --typescript
 }
 
 local filename = vim.fn.expand("%:p")
