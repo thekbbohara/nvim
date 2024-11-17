@@ -17,8 +17,8 @@ keymap.set("n", "<leader>q", ":wq<cr>", opts)
 keymap.set("n", "<Esc>", ":")
 
 -- buffer
-vim.keymap.set("n", "<leader>bn", ":bnext<CR>", { desc = "Next Buffer" })
-vim.keymap.set("n", "<leader>bp", ":bprevious<CR>", { desc = "Previous Buffer" })
+vim.keymap.set("n", "]b", ":bnext<CR>", { desc = "Next Buffer" })
+vim.keymap.set("n", "[b", ":bprevious<CR>", { desc = "Previous Buffer" })
 
 -- insert to normalkeymap
 keymap.set("i", "jk", "<Esc>")
