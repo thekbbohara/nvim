@@ -1,3 +1,3 @@
-print("thekbbohara")
-require("thekbbohara.remap")
-require("thekbbohara.config.lazy")
+require("thekbbohara.core.opt")
+require("thekbbohara.core.remap")
+require("thekbbohara.core.lazy")

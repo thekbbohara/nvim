@@ -5,52 +5,52 @@ vim.g.maplocalleader = " "
 vim.g.mapleader = " "
 
 -- key mapping
-local keymap = vim.keymap
+local map = vim.keymap.set
 local opts = { noremap = true, silent = true }
 
 -- write and quit with leader w/q
--- keymap.set("n","<leader>w",":w<cr>",opts) -- available on none-ls.lua
-keymap.set("n", "<leader>q", ":wq<cr>", opts)
+-- map("n","<leader>w",":w<cr>",opts) -- available on none-ls.lua
+map("n", "<leader>q", ":wq<cr>", opts)
 
 -- open :NvimTree with leader nt
-keymap.set("n", "<leader>nt", ":NvimTreeOpen<cr>")
+map("n", "<leader>nt", ":NvimTreeOpen<cr>")
 
 -- go to command mode with esc from normal mode
-keymap.set("n", "<Esc>", ":")
+map("n", "<Esc>", ":")
 
 -- buffer
-vim.keymap.set("n", "<leader>bn", ":bnext<CR>", { desc = "Next Buffer" })
-vim.keymap.set("n", "<leader>bp", ":bprevious<CR>", { desc = "Previous Buffer" })
+vim.map("n", "<leader>bn", ":bnext<CR>", { desc = "Next Buffer" })
+vim.map("n", "<leader>bp", ":bprevious<CR>", { desc = "Previous Buffer" })
 
 -- insert to normalkeymap
-keymap.set("i", "jk", "<Esc>")
-keymap.set("i", "<C-j>", "<Esc>ja", opts)
-keymap.set("i", "<C-k>", "<Esc>ka", opts)
-keymap.set("i", "<C-h>", "<Esc>i", opts)
-keymap.set("i", "<C-l>", "<Esc>la", opts)
+map("i", "jk", "<Esc>")
+map("i", "<C-j>", "<Esc>ja", opts)
+map("i", "<C-k>", "<Esc>ka", opts)
+map("i", "<C-h>", "<Esc>i", opts)
+map("i", "<C-l>", "<Esc>la", opts)
 
 -- move lines up an down
 -- for insert mode
-keymap.set({ "i", "n" }, "<C-S-J>", "<Esc>:m+<cr>", opts)
-keymap.set({ "i", "n" }, "<C-S-K>", "<Esc>:m-2<cr>", opts)
--- keymap.set("i", "<C-H>", "<Esc>^i", opts)
--- keymap.set("i", "<C-L>", "<Esc>$a", opts)
+map({ "i", "n" }, "<C-S-J>", "<Esc>:m+<cr>", opts)
+map({ "i", "n" }, "<C-S-K>", "<Esc>:m-2<cr>", opts)
+-- map("i", "<C-H>", "<Esc>^i", opts)
+-- map("i", "<C-L>", "<Esc>$a", opts)
 
 -- moves oneword forward or backward
-keymap.set("i", "<C-w>", "<Esc>wli", opts)
-keymap.set("i", "<C-b>", "<Esc>bi", opts)
+map("i", "<C-w>", "<Esc>wli", opts)
+map("i", "<C-b>", "<Esc>bi", opts)
 -- delete in _ reg
-keymap.set({ "v", "n" }, "x", '"_x', opts)
-keymap.set({ "n", "v" }, "dx", '"_dd', opts)
+map({ "v", "n" }, "x", '"_x', opts)
+map({ "n", "v" }, "dx", '"_dd', opts)
 
 --select all
-keymap.set("n", "<C-a>", "gg0vG$", opts)
+map("n", "<C-a>", "gg0vG$", opts)
 
 --increment / decrement
-keymap.set("n", "+", "<C-a>")
-keymap.set("n", "-", "<C-x>")
+map("n", "+", "<C-a>")
+map("n", "-", "<C-x>")
 
 -- Split
-keymap.set("n", "ss", ":vsplit<cr>", opts)
-keymap.set("n", "sh", ":split<cr>", opts)
+map("n", "ss", ":vsplit<cr>", opts)
+map("n", "sh", ":split<cr>", opts)
 
