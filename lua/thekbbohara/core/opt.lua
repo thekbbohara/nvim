@@ -5,12 +5,14 @@ vim.g.have_nerd_font = true
 -- See `:help vim.opt`
 -- `:help option-list`
 
+
 -- Set default incoding to "utf-8"
 vim.scriptencoding = "utf-8"
 vim.opt.encoding = "utf-8"
 vim.opt.fileencoding = "utf-8"
 -- Set the number of spaces a tab count for
 vim.opt.tabstop = 2
+vim.opt.softtabstop = 2   -- Use spaces for tabs
 
 -- Set the number of spaces to use for each step of (auto) indent
 vim.opt.shiftwidth = 2

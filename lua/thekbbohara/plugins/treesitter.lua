@@ -8,7 +8,7 @@ return {
 	},
 	config = function()
 		require("nvim-treesitter.configs").setup({
-			ensure_installed = { "typescript", "javascript", "tsx", "python", "lua" },
+			ensure_installed = { "typescript", "javascript", "tsx", "python", "lua", "json" },
 			sync_install = false,
 			-- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
 			auto_install = false,
@@ -20,5 +20,6 @@ return {
 				additional_vim_regex_highlighting = false,
 			},
 		})
+
 	end,
 }
