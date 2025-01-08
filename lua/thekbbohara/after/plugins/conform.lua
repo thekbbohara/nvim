@@ -16,6 +16,11 @@ return {
 			default_format_opts = {
 				lsp_format = "fallback",
 			},
+			format_on_save = {
+				-- These options will be passed to conform.format()
+				timeout_ms = 500,
+				lsp_format = "fallback",
+			},
 		})
 		-- Keybinding for formatting
 		vim.keymap.set("n", "<leader>fm", function()

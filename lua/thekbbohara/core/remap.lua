@@ -3,7 +3,7 @@ local map = vim.keymap.set
 local opts = {noremap = true, silent = true}
 
 -- write/quit
-map("n", "<leader>w", ":fm<cr>:w<cr>", opts)
+map("n", "<leader>w", vim.cmd.w, opts)
 map("n", "<leader>q", ":wq<cr>", opts)
 
 -- insert to normalkeymap
