@@ -9,10 +9,10 @@ return {
 	config = function()
 		require("nvim-treesitter.configs").setup({
 			ensure_installed = { "typescript", "javascript", "tsx", "python", "lua", "json" },
-			sync_install = false,
+			sync_install = true,
 			-- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
-			auto_install = false,
-      textobjects = {enable=true},
+			auto_install = true,
+			textobjects = { enable = true },
 			highlight = {
 				enable = true,
 				-- disable = { "c", "rust" },
@@ -20,6 +20,5 @@ return {
 				additional_vim_regex_highlighting = false,
 			},
 		})
-
 	end,
 }

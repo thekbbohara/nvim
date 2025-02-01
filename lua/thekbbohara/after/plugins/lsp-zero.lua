@@ -15,6 +15,14 @@ return {
 		{ "hrsh7th/cmp-nvim-lua" },
 
 		-- Snippets
+
+		{
+			"L3MON4D3/LuaSnip",
+			-- follow latest release.
+			version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
+			-- install jsregexp (optional!).
+			build = "make install_jsregexp",
+		},
 		{ "saadparwaiz1/cmp_luasnip" },
 		{ "rafamadriz/friendly-snippets" },
 	},
@@ -24,13 +32,16 @@ return {
 
 		-- Ensure the required LSP servers are installed
 		require("mason-lspconfig").setup({
-			ensure_installed = { "vtsls", "eslint" }, -- Add your desired servers here
+			ensure_installed = { "vtsls", "eslint", "tailwindcss", "html", "hyprls" }, -- Add your desired servers here
 		})
 
 		-- Configure LSP servers
 		local lspconfig = require("lspconfig")
 		lspconfig.vtsls.setup({})
 		lspconfig.eslint.setup({})
+		lspconfig.hyprls.setup({})
+		lspconfig.hyprls.setup({})
+		lspconfig.prismals.setup({})
 
 		-- Set up nvim-cmp for autocompletion
 		local cmp = require("cmp")
@@ -52,31 +63,39 @@ return {
 				{ name = "path" },
 			},
 		})
-		local on_attach = function(client, bufnr)
-			local opts = { buffer = bufnr, remap = false }
-			local map = vim.keymap.set
-			map("n", "gd", vim.lsp.buf.definition, opts)
-			map("n", "K", vim.lsp.buf.hover, opts)
-			map("n", "<leader>vws", vim.lsp.buf.workspace_symbol, opts)
-			map("n", "<leader>vd", vim.diagnostic.open_float, opts)
-			map("n", "[d", vim.diagnostic.goto_next, opts)
-			map("n", "]d", vim.diagnostic.goto_prev, opts)
-			map("n", "<leader>vca", vim.lsp.buf.code_action, opts)
-			map("n", "<leader>vrr", vim.lsp.buf.references, opts)
-			map("n", "<leader>vrn", vim.lsp.buf.rename, opts)
-			map("i", "<C-h>", vim.lsp.buf.signature_help, opts)
-		end
+		-- local on_attach = function(client, bufnr)
+		local opts = { remap = false }
+		local map = vim.keymap.set
+		map("n", "gd", vim.lsp.buf.definition, opts)
+		map("n", "K", vim.lsp.buf.hover, opts)
+		map("n", "<leader>vws", vim.lsp.buf.workspace_symbol, opts)
+		map("n", "<leader>vd", vim.diagnostic.open_float, opts)
+		map("n", "[d", vim.diagnostic.goto_next, opts)
+		map("n", "]d", vim.diagnostic.goto_prev, opts)
+		map("n", "<leader>vca", vim.lsp.buf.code_action, opts)
+		map("n", "<leader>vrr", vim.lsp.buf.references, opts)
+		map("n", "<leader>vrn", vim.lsp.buf.rename, opts)
+		map("i", "<C-h>", vim.lsp.buf.signature_help, opts)
+		-- end
 
 		-- Attach the on_attach function to LSP servers
-    -- typescript ls
+		-- typescript ls
 		lspconfig.vtsls.setup({
 			on_attach = on_attach,
 		})
-    -- eslint
+		-- tailwindcss
+		lspconfig.tailwindcss.setup({
+			on_attach = on_attach,
+		})
+		-- eslint
 		lspconfig.eslint.setup({
 			on_attach = on_attach,
 		})
-    -- emmet ls
+		-- eslint
+		lspconfig.pylsp.setup({
+			on_attach = on_attach,
+		})
+		-- emmet ls
 		lspconfig.emmet_language_server.setup({
 			filetypes = {
 				"css",
