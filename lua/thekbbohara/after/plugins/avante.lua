@@ -5,6 +5,14 @@ return {
 	version = false, -- Set this to "*" to always pull the latest release version, or set it to false to update to the latest code changes.
 	opts = {
 		-- add any opts here
+		provider = "gemini",
+		gemini = {
+			endpoint = "https://generativelanguage.googleapis.com",
+			model = "gemini-2.0-pro-exp-02-05",
+			timeout = 30000, -- timeout in milliseconds
+			temperature = 0, -- adjust if needed
+			max_tokens = 8096,
+		},
 	},
 	-- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
 	build = "make",
@@ -25,15 +33,16 @@ return {
 			"HakonHarnes/img-clip.nvim",
 			event = "VeryLazy",
 			opts = {
+
 				-- recommended settings
 				default = {
-					embed_image_as_base64 = false,
-					prompt_for_file_name = false,
+					embed_image_as_base64 = true,
+					prompt_for_file_name = true,
 					drag_and_drop = {
 						insert_mode = true,
 					},
 					-- required for Windows users
-					use_absolute_path = true,
+					use_absolute_path = false,
 				},
 			},
 		},
