@@ -67,7 +67,7 @@ return {
 		local opts = { remap = false }
 		local map = vim.keymap.set
 		map("n", "gd", vim.lsp.buf.definition, opts)
-		map("n", "K", vim.lsp.buf.hover, opts)
+		map("n", "<C-k>", vim.lsp.buf.hover, opts)
 		map("n", "<leader>vws", vim.lsp.buf.workspace_symbol, opts)
 		map("n", "<leader>vd", vim.diagnostic.open_float, opts)
 		map("n", "[d", vim.diagnostic.goto_next, opts)
