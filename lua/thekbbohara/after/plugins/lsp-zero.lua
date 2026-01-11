@@ -32,7 +32,7 @@ return {
 
 		-- Ensure the required LSP servers are installed
 		require("mason-lspconfig").setup({
-			ensure_installed = { "vtsls", "eslint", "tailwindcss", "html", "hyprls" }, -- Add your desired servers here
+			ensure_installed = { "vtsls", "eslint", "tailwindcss", "html" }, -- Add your desired servers here
 		})
 
 		-- Configure LSP servers
