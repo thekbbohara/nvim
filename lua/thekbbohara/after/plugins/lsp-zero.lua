@@ -36,12 +36,10 @@ return {
 		})
 
 		-- Configure LSP servers
-		local lspconfig = require("lspconfig")
-		lspconfig.vtsls.setup({})
-		lspconfig.eslint.setup({})
-		lspconfig.hyprls.setup({})
-		lspconfig.hyprls.setup({})
-		lspconfig.prismals.setup({})
+		vim.lsp.config("vtsls", {})
+		vim.lsp.config("eslint", {})
+		vim.lsp.config("hyprls", {})
+		vim.lsp.config("prismals", {})
 
 		-- Set up nvim-cmp for autocompletion
 		local cmp = require("cmp")
@@ -78,25 +76,10 @@ return {
 		map("i", "<C-h>", vim.lsp.buf.signature_help, opts)
 		-- end
 
-		-- Attach the on_attach function to LSP servers
-		-- typescript ls
-		lspconfig.vtsls.setup({
-			on_attach = on_attach,
-		})
-		-- tailwindcss
-		lspconfig.tailwindcss.setup({
-			on_attach = on_attach,
-		})
-		-- eslint
-		lspconfig.eslint.setup({
-			on_attach = on_attach,
-		})
-		-- eslint
-		lspconfig.pylsp.setup({
-			on_attach = on_attach,
-		})
-		-- emmet ls
-		lspconfig.emmet_language_server.setup({
+		-- Configure remaining LSP servers
+		vim.lsp.config("tailwindcss", {})
+		vim.lsp.config("pylsp", {})
+		vim.lsp.config("emmet_language_server", {
 			filetypes = {
 				"css",
 				"eruby",
@@ -132,5 +115,6 @@ return {
 				variables = {},
 			},
 		})
+		vim.lsp.enable({ "vtsls", "eslint", "hyprls", "prismals", "tailwindcss", "pylsp", "emmet_language_server" })
 	end,
 }
