@@ -11,5 +11,10 @@ return {
 		vim.keymap.set("n", "<C-l>", nvim_tmux_nav.NvimTmuxNavigateRight)
 		vim.keymap.set("n", "<C-\\>", nvim_tmux_nav.NvimTmuxNavigateLastActive)
 		vim.keymap.set("n", "<C-n>", nvim_tmux_nav.NvimTmuxNavigateNext)
+		-- terminal mode: navigate out of Claude/terminal buffers
+		vim.keymap.set("t", "<C-h>", nvim_tmux_nav.NvimTmuxNavigateLeft)
+		vim.keymap.set("t", "<C-j>", nvim_tmux_nav.NvimTmuxNavigateDown)
+		vim.keymap.set("t", "<C-k>", nvim_tmux_nav.NvimTmuxNavigateUp)
+		vim.keymap.set("t", "<C-l>", nvim_tmux_nav.NvimTmuxNavigateRight)
 	end,
 }
